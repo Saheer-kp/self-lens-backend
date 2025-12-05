@@ -6,7 +6,6 @@ Backend Node App for Self Lens project.
 
 - Node.js
 - MongoDB
-- Redis (optional, for repositories)
 
 ## Getting Started
 
@@ -19,31 +18,29 @@ Backend Node App for Self Lens project.
 2. Create a `.env` file at the root with at least:
 
    ```
-   PORT=5000
-   MONGODB_URI=mongodb://localhost:27017/selflens
-   JWT_SECRET=your_secret_here
-   JWT_EXPIRES_IN=7d
-   # Add Google OAuth and Redis env vars as needed
+   PORT=3000
+   NODE_ENV=development
+   JWT_SECRET=secret
+   JWT_EXPIRES_IN=1d
+   JWT_COOKIE_EXPIRES_IN=2
+   DB_PASSWORD=
+   DATABASE=mongodb+srv://*************@cluster0.mst82at.mongodb.net/self_lens?retryWrites=true&w=majority&appName=Cluster0
+   G_CLIENT_ID=
+   G_CLIENT_SECRET=
+   G_REDIRECT_URI=
    ```
+
+```
 
 3. Start the backend:
-   ```
-   npm start
-   ```
 
-The server will be accessible at `http://localhost:5000/` by default.
+```
 
-## Project Structure
+npm run dev
 
-- `server.js` - Server entry point, connects to MongoDB and starts Express app.
-- `app.js` - Defines express app, middleware, and routes.
-- `routes/` - Express route definitions.
-- `controllers/` - Request handlers for routes.
-- `models/` - Mongoose models.
-- `middlewares/` - Express middleware functions.
-- `utils/` - Utility modules (error, response, jwt, password etc).
-- `config/` - Auth and Redis configuration.
+```
 
----
+The server will be accessible at `http://localhost:3000/` by default.
 
-For API documentation, see comments in the controllers. Add your Google and Redis credentials as needed.
+
+```
