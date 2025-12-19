@@ -22,23 +22,6 @@ const userSchema = mongoose.Schema(
       type: String,
       default: "default.jpg", // Default profile photo
     },
-    // password: {
-    //   type: String,
-    //   required: [true, "Password is required"],
-    //   // minlength: [8, 'Password must be at least 8 characters long'],
-    //   select: false, // Exclude password from query results by default
-    // },
-    // passwordConfirm: {
-    //   type: String,
-    //   required: [true, "Please confirm your password"],
-    //   validate: {
-    //     validator: function (value) {
-    //       // Ensure confirm_password matches password and only works on save() and CREATE!!!
-    //       return value === this.password;
-    //     },
-    //     message: "Passwords do not match",
-    //   },
-    // },
     password: {
       type: String,
       required: function () {

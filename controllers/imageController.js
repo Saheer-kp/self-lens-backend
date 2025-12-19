@@ -114,52 +114,6 @@ function calculateImageSpan(dimensions) {
   return span;
 }
 
-// In your backend routes
-// exports.getImages = async (req, res) => {
-//   try {
-//     const page = parseInt(req.query.page) || 1;
-//     const limit = parseInt(req.query.limit) || 5;
-//     const search = req.query.search || "";
-//     const category = req.query.category || "";
-
-//     const skip = (page - 1) * limit;
-
-//     // Build query
-//     let query = {};
-
-//     if (search) {
-//       query.$or = [
-//         { description: { $regex: search, $options: "i" } },
-//         { category: { $regex: search, $options: "i" } },
-//         { tags: { $regex: search, $options: "i" } },
-//       ];
-//     }
-
-//     if (category) {
-//       query.category = category;
-//     }
-
-//     const images = await Image.find(query)
-//       .populate("user", "name avatar")
-//       .sort({ createdAt: -1 })
-//       .skip(skip)
-//       .limit(limit);
-
-//     const total = await Image.countDocuments(query);
-//     const hasMore = skip + images.length < total;
-
-//     successResponse(res, "sucess", {
-//       images,
-//       currentPage: page,
-//       totalPages: Math.ceil(total / limit),
-//       hasMore,
-//     });
-//   } catch (error) {
-//     console.error("Error fetching images:", error);
-//     errorResponse(res, "Failed to fetch images");
-//   }
-// };
-
 exports.getImages = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
